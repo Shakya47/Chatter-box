@@ -1,0 +1,16 @@
+entry point: server.js
+
+put PORT in .env
+
+#to connect backend with frontend we need to give proxy
+- as both the server will be on different ports, it will give CORS error
+- add proxy : http://127.0.0.1:5000 in frontend/package.json
+
+For those getting proxy error, Try running this command in frontend
+npm config set https-proxy http://127.0.0.1:5000
+
+#put your Mongo_URI in .env
+
+#In backend, config/db.js is responsible for DB connection
+
+#As we are taking values from the frontend, make sure to use this in backend/server.js -> app.user(express.json())
